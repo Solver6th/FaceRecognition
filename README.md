@@ -1,16 +1,21 @@
 작업 내용
 1. venv 가상환경 만들기
     $ python -m venv venv
-2. activate -> (venv) 생성됨
+2. Scripts 폴더로 이동
+    $ cd venv 
+    $ cd Scripts
+3. activate -> (venv) 생성됨
     $ . activate
-3. "cd .." 두번 후 장고 설치
+4. "cd .." 두번 후 장고 설치
     $ pip install django
-4. 장고 프로젝트 만들기
+5. 장고 프로젝트 만들기 (주의 처음 실행시)
     $ django-admin startproject mysite
-5.  mysite로 이동 후 runserver
+6.  mysite로 이동 후 runserver
     $ cd mysite
     $ python manage.py runserver
-
+7. 데이터베이스 생성
+    $ python manage.py migrate
+    
 설문조사 앱 만들기(https://docs.djangoproject.com/ko/4.1/intro/tutorial01/)
 1. pools/urls.py & mysite/urls.py
     어디에 위치한 urls인지 혼동하지 말기
