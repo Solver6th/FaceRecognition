@@ -7,6 +7,8 @@
 3. activate -> (venv) 생성됨
     $ . activate
 4. "cd .." 두번 후 장고 설치
+    $ cd ..
+    $ cd ..
     $ pip install django
 5. 장고 프로젝트 만들기 (주의 처음 실행시)
     $ django-admin startproject mysite
