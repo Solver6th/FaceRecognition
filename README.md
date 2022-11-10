@@ -76,3 +76,24 @@
 
 
 얼굴 인식 앱 만들기
+
+1.아주르 홈페이지 가서 리소스만들기
+(스카이프 채팅창에 있는 사진 참고)
+
+2.아주르에서 파워쉘연후 
+
+https://learn.microsoft.com/ko-kr/training/modules/analyze-images-computer-vision/2-image-analysis-azure
+
+들어가기 
+
+3. git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
+입력
+
+4. code .
+입력후 리소스에 있는 키포인트 엔드포인트 넣기
+
+5. 이미지분석검토
+
+cd ai-900
+./analyze-image.ps1 store-camera-1.jpg
+입력
