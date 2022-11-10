@@ -7,8 +7,6 @@
 3. activate -> (venv) 생성됨
     $ . activate
 4. "cd .." 두번 후 장고 설치
-    $ cd ..
-    $ cd ..
     $ pip install django
 5. 장고 프로젝트 만들기 (주의 처음 실행시)
     $ django-admin startproject mysite
@@ -17,62 +15,62 @@
     $ python manage.py runserver
 7. 데이터베이스 생성
     $ python manage.py migrate
+8. 장고 관리자 생성하기
+    $ python manage.py createsuperuser
     
 설문조사 앱 만들기(https://docs.djangoproject.com/ko/4.1/intro/tutorial01/)
-1. 첫번 째 뷰 작성하기
-    pools/urls.py 와 mysite/urls.py에 코드 입력
-    주의) polls/urls.py & mysite/urls.py -> 어디에 위치한 urls인지 혼동하지 말기
-2. 데이터 베이스 설치
-    $ python manage.py migrate
-3. 모델 만들기
-    polls/models.py 수정
-4. 모델 활성화
-    mysite/settings.py 파일을 편집하여 INSTALLED_APPS 설정에 추가
-5. API 가지고 놀기
-    polls/models.py 파일의 Question 모델을 수정하여, __str__() 메소드를 Question과 Choice에 추가
-    polls/models.py에 커스텀 메소드 또한 추가
-6. 관리자 생성
-    $ python manage.py createsuperuser
-    Username: admin
-    Email address: admin@example.com
-    Password: **********
-    Password (again): *********
-7. 개발 서버 시작
+1. pools/urls.py & mysite/urls.py
+    어디에 위치한 urls인지 혼동하지 말기
+2. 띄어쓰기 신경쓰기
+    view.py에서 띄어쓰기 문제로 오류 발생
+3. 이미지 추가하는 방법
+    static\polls 폴더에 image 폴더를 추가 후 png 파일을 저장
+
+1. 프로젝트 만들기
+    $ django-admin startproject mysite
+2. 서버가 정상 작동하는지 확인
     $ python manage.py runserver
-    http://127.0.0.1:8000/admin/
-8. 관리 사이트에서 poll app 을 변경가능하도록 만들기
-    polls/admin.py 파일을 열어 편집
-9. 뷰 추가하기
-    polls/views.py 에 뷰를 추가
-    path() 호출을 추가하여 새로운 뷰를 polls.urls 모듈로 연결
-10. 뷰가 실제로 뭔가를 하도록 만들기
-    polls/views.py 수정 (띄어쓰기 신경쓰기 -> view.py에서 띄어쓰기 문제로 오류 발생)
-    polls/templates/polls/index.html에 코드 입력
-    polls/views.py에 index 뷰를 업데이트
-11. 지름길: render()
-    index() 뷰를 단축 기능으로 작성
-12. 404 에러 일으키기
-    polls/views.py에 새로운 내용이 추가(뷰는 요청된 질문의 ID 가 없을 경우 Http404 예외를 발생)
-    polls/templates/polls/detail.html 작성
-13. 지름길: get_object_or_404()
-    polls/views.py에 detail() 뷰를 단축 기능으로 작성
-14. 템플릿 시스템 사용하기
-    polls/views.py에 detail()에 추가 작성
-15. 템플릿에서 하드코딩된 URL 제거하기
-    polls/templates/polls/index.html에 코드 수정
-16. URL의 이름공간 정하기
-    polls/urls.py 파일에 app_name을 추가
-    polls/templates/polls/index.html에 코드 변경
-17. 간단한 폼 쓰기
-    polls/templates/polls/detail.html에 HTML <form> 요소를 포함
-    polls/urls.py에 vote() 함수 추가
-    polls/templates/polls/results.html 생성
-18. 제너릭 뷰 사용하기
-    polls/urls.py 변경
-    polls/views.py 수정
-19. 배경 이미지 추가
-    이미지 추가하는 방법 -> static\polls 폴더에 image 폴더를 추가 후 images/background.png 파일을 저장
-    polls/static/polls/style.css 생성 및 작성
+3. 설문조사 앱 만들기
+    $ python manage.py startapp polls (polls 라는 디렉토리가 생성된다.)
+4. 데이터베이스 설치
+    $ python manage.py migrate
+5. 모델 만들기 (설문조사 앱에서 필요한 Question 과 Choice 라는 모델을 만든다.)
+    from django.db import models
 
 
-얼굴 인식 앱 만들기
+class Question(models.Model):
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+
+
+class Choice(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
+
+6. 모델 활성화 시키기 (mysite/settings.py 파일에 INSTALLE_APPS 추가)
+    INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    ]
+6. 장고 관리자 생성 
+
+
+얼굴 인식 앱 만들기(https://learn.microsoft.com/ko-kr/training/modules/analyze-images-computer-vision/3-analyze-images)
+1. Cognitive Services 리소스 만들기( https://portal.azure.com)
+    리소스 만들기에서  Cognitive Services 리소스를 만든다.
+2. 리소스 그룹에서 키 및 엔드포인트 확인 및 저장하기
+3. Cloud Shell 실행
+    *중요* Cloud Shell에서 셸 형식을 PowerShell로 바꾼다
+4. 샘플 애플리케이션을 다운로드
+    $ git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
+5. 키 및 엔드포인트 변경
+    $code .     을 입력하여 analyze.image.ps1파일에 들어가서 자신의 키 및 엔드포인트 변경
+6. 이미지 분석
+    $cd ai-900
+    ./analyze-image.ps1 store-camera-1.jpg
