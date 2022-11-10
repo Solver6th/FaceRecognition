@@ -75,25 +75,18 @@
     polls/static/polls/style.css 생성 및 작성
 
 
-얼굴 인식 앱 만들기
-
-1.아주르 홈페이지 가서 리소스만들기
-(스카이프 채팅창에 있는 사진 참고)
-
-2.아주르에서 파워쉘연후 
-
-https://learn.microsoft.com/ko-kr/training/modules/analyze-images-computer-vision/2-image-analysis-azure
-
-들어가기 
-
-3. git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900
-입력
-
-4. code .
-입력후 리소스에 있는 키포인트 엔드포인트 넣기
-
-5. 이미지분석검토
-
-cd ai-900
-./analyze-image.ps1 store-camera-1.jpg
-입력
+얼굴 인식 앱 만들기(https://learn.microsoft.com/ko-kr/training/modules/analyze-images-computer-vision/3-analyze-images)
+1.아주르 홈페이지 가서 리소스 만들기 (스카이프 채팅창에 있는 사진 참고)
+    리소스 만들기에서  Cognitive Services 리소스 생성( https://portal.azure.com)
+2. 리소스 그룹에서 키 및 엔드포인트 확인 및 저장하기
+3. Cloud Shell 실행
+    <<*중요* Cloud Shell에서 셸 형식을 PowerShell로 바꾼다>>
+    아주르에서 파워쉘연 후 https://learn.microsoft.com/ko-kr/training/modules/analyze-images-computer-vision/2-image-analysis-azure 들어가기 
+4. 샘플 애플리케이션을 다운로드
+    $ git clone https://github.com/MicrosoftLearning/AI-900-AIFundamentals ai-900 입력
+5. 키 및 엔드포인트 변경
+    $code .  입력
+    analyze.image.ps1 들어가서 자신의 키포인트 및 엔드포인트 변경
+6. 이미지 분석
+    $cd ai-900
+    ./analyze-image.ps1 store-camera-1.jpg 입력
