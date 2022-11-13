@@ -9,7 +9,10 @@
 4. "cd .." 두번 후 장고 설치
     $ cd ..
     $ cd ..
-    $ pip install django
+    $ pip install django -> 장고패키지 설치
+    *중요*
+    pip란 Python 패키지 관리자 중 하나
+    지정한 패키지를 다은로드하고 설치해줌(이때 추가로 필요한 다른패키지도 자동으로 같이 설치해줌)
 5. 장고 프로젝트 만들기 (주의 처음 실행시)
     $ django-admin startproject mysite
 6.  mysite로 이동 후 runserver
