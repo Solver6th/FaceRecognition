@@ -9,7 +9,10 @@
 4. "cd .." 두번 후 장고 설치
     $ cd ..
     $ cd ..
-    $ pip install django
+    $ pip install django -> 장고패키지 설치
+    *중요*
+    pip란 Python 패키지 관리자 중 하나
+    지정한 패키지를 다은로드하고 설치해줌(이때 추가로 필요한 다른패키지도 자동으로 같이 설치해줌)
 5. 장고 프로젝트 만들기 (주의 처음 실행시)
     $ django-admin startproject mysite
 6.  mysite로 이동 후 runserver
@@ -90,3 +93,28 @@
 6. 이미지 분석
     $cd ai-900
     ./analyze-image.ps1 store-camera-1.jpg 입력
+
+Python 용 Azure Cognitive service 모듈 (https://learn.microsoft.com/ko-kr/python/api/overview/azure/cognitive-services?view=azure-python)
+
+비전모듈 
+Face API
+1. venv가 있는지 확인
+    결과창에 venv 폴더가있는지 확인하기
+    $ls -a
+2. (venv가있을경우) 가상환경으로 들어가기
+    $cd venv
+    $cd Scripts
+    $. activate
+3. Face python 패키지 설치
+    $cd ..
+    $cd ..
+    $pip install cognitive-face
+4. Azure 계정에 Cognitive Services 기여자 역할이 할당되어있지 않을경우 할당하기
+5. 얼굴식별 클라이언트 라이브러리 설치
+    $pip install --upgrade azure-cognitiveservices-vision-face
+6. 새 Python 애플리케이션 만들기
+    faceapi 폴더 생성후 안에 quickstart-file.py 생성한다음 코드붙여넣기
+    
+    
+    
+
