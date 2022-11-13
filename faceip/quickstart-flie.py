@@ -1,3 +1,4 @@
+@@ -0,0 +1,152 @@
 import asyncio
 import io
 import os
@@ -16,10 +17,10 @@ from azure.cognitiveservices.vision.face.models import TrainingStatusType, Perso
 
 
 # This key will serve all examples in this document.
-KEY = "PASTE_YOUR_FACE_SUBSCRIPTION_KEY_HERE"
+KEY = "aa0601b9becd46dab0d45a0fe7ea47a7"
 
 # This endpoint will be used in all examples in this quickstart.
-ENDPOINT = "PASTE_YOUR_FACE_ENDPOINT_HERE"
+ENDPOINT = "https://imsangbin.cognitiveservices.azure.com/"
 
 # Base url for the Verify and Facelist/Large Facelist operations
 IMAGE_BASE_URL = 'https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/Face/images/'
@@ -28,7 +29,7 @@ IMAGE_BASE_URL = 'https://raw.githubusercontent.com/Azure-Samples/cognitive-serv
 # You can call list_person_groups to print a list of preexisting PersonGroups.
 # SOURCE_PERSON_GROUP_ID should be all lowercase and alphanumeric. For example, 'mygroupname' (dashes are OK).
 PERSON_GROUP_ID = str(uuid.uuid4()) # assign a random ID (or name it anything)
-
+print(PERSON_GROUP_ID)
 # Used for the Delete Person Group example.
 TARGET_PERSON_GROUP_ID = str(uuid.uuid4()) # assign a random ID (or name it anything)
 
