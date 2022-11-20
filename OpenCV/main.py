@@ -4,7 +4,7 @@ import timeit
 #사진 검출기
 def imgDetector(img,cascade):
     #영상 압축
-    img = cv2.resize(img, dsize=None, fx=0.5, fy=0.5)
+    img = cv2.resize(img, dsize=None, fx=1.0, fy=1.0)
     #그레이 스케일 변환
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
