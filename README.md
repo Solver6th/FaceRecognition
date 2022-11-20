@@ -112,3 +112,16 @@ Python 용 Azure Cognitive service 모듈 (https://learn.microsoft.com/ko-kr/pyt
     $pip install --upgrade azure-cognitiveservices-vision-face
 6. 새 Python 애플리케이션 만들기
     faceapi 폴더 생성후 안에 quickstart-file.py 생성 gn 코드 붙여넣기
+
+[Python] 파이썬 OpenCV를 이용한 얼굴 인식(https://deep-eye.tistory.com/m/18)
+1. OpenCV 폴더 생성
+    pip install opencv-python
+    main.py 생성
+2. Haar Cascade 분류기 불러오기
+    haarcascade_frontalface_alt.xml 다운로드 및 OpenCV 폴더로 이동
+3. 사진 불러오기
+    사진 파일과 사진 출력만 main.py에 코딩
+4.얼굴 탐지 알고리즘 적용
+    오타 주의
+5.최종 응용 코딩
+    imgDetector(cam,cascade)이 아닌 imgDetector(img, cascade)로 작성
