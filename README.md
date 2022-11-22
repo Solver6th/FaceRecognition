@@ -37,9 +37,45 @@
     ./analyze-image.ps1 store-camera-1.jpg 입력
 Python 용 Azure Cognitive service 모듈 (https://learn.microsoft.com/ko-kr/python/api/overview/azure/cognitive-services?view=azure-python) -Face API(비전모듈)
 
+
 venv가 있는지 확인 결과창에 venv 폴더가있는지 확인하기 $ls -a
 (venv가있을경우) 가상환경으로 들어가기 $cd venv $cd Scripts $. activate
 Face python 패키지 설치 $cd .. $cd .. $pip install cognitive-face
 Azure 계정에 Cognitive Services 기여자 역할이 할당되어있지 않을 경우 할당하기
 얼굴식별 클라이언트 라이브러리 설치 $pip install --upgrade azure-cognitiveservices-vision-face
 새 Python 애플리케이션 만들기 faceapi 폴더 생성후 안에 quickstart-file.py 생성 gn 코드 붙여넣기
+
+        ./analyze-image.ps1 store-camera-1.jpg 입력
+
+Python 용 Azure Cognitive service 모듈 (https://learn.microsoft.com/ko-kr/python/api/overview/azure/cognitive-services?view=azure-python)
+-Face API(비전모듈)
+1. venv가 있는지 확인
+    결과창에 venv 폴더가있는지 확인하기
+    $ls -a
+2. (venv가있을경우) 가상환경으로 들어가기
+    $cd venv
+    $cd Scripts
+    $. activate
+3. Face python 패키지 설치
+    $cd ..
+    $cd ..
+    $pip install cognitive-face
+4. Azure 계정에 Cognitive Services 기여자 역할이 할당되어있지 않을 경우 할당하기
+5. 얼굴식별 클라이언트 라이브러리 설치
+    $pip install --upgrade azure-cognitiveservices-vision-face
+6. 새 Python 애플리케이션 만들기
+    faceapi 폴더 생성후 안에 quickstart-file.py 생성 gn 코드 붙여넣기
+
+[Python] 파이썬 OpenCV를 이용한 얼굴 인식(https://deep-eye.tistory.com/m/18)
+1. OpenCV 폴더 생성
+    pip install opencv-python
+    main.py 생성
+2. Haar Cascade 분류기 불러오기
+    haarcascade_frontalface_alt.xml 다운로드 및 OpenCV 폴더로 이동
+3. 사진 불러오기
+    사진 파일과 사진 출력만 main.py에 코딩
+4.얼굴 탐지 알고리즘 적용
+    오타 주의
+5.최종 응용 코딩
+    imgDetector(cam,cascade)이 아닌 imgDetector(img, cascade)로 작성
+
