@@ -128,3 +128,20 @@ Python 용 Azure Cognitive service 모듈 (https://learn.microsoft.com/ko-kr/pyt
     $python main.py
 
 
+Facerecognition 
+
+1. 가상환경들어가기
+2. models.py 안에 코드추가
+3. mysite안에 media\images 폴더 생성
+4. mysite\mysite\setting.py 안에 MEDIA_URL,MEDIA_ROOT 생성
+5. mysite\facerecognition\admin.py 안에 Face model 추가
+6. 가상환경안에서 mysite 안에서 다음 커맨드 실행
+    $python manage.py makemigrations
+7. 6번이후 다음 커맨드실행
+    $python manage.py migrate
+8. mysite\facerecognition\forms.py 생성후 FaceForm 클래스 추가
+9. mysite\facerecognition\templates\facerecognition\face_image.html 생성
+10. mysite\facerecognition\views.py 안에 FaceImage 클래스 추가
+11. mysite\facerecognition\templates\facerecognition\face_image_display.html 생성
+12. mysite\facerecognition\views.py 안에 FaceImageDisplay 클래스 추가
+13. mysite\facerecognition\views.py 안 arg 앞에 *추가
