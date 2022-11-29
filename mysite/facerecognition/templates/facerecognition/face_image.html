@@ -2,13 +2,21 @@
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8"> 
-    <title>image upload example</title> 
+    <title>얼굴 인식 앱 프로젝트</title> 
+    <style>
+        nav {background-color:black; font-size:500%; text-align: center}
+        nav a {color:white}
+    </style>
 </head> 
 <body> 
+    <nav>
+        <a>얼굴 인식 앱 프로젝트</a>
+
+    </nav>
     <form method = "post" enctype="multipart/form-data"> 
         {% csrf_token %} 
         {{ form.as_p }} 
         <button type="submit">Upload</button> 
-    </form> 
+    </form> `
 </body> 
 </html> 
