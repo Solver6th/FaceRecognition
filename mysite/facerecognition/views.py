@@ -17,8 +17,8 @@ class FaceImage(TemplateView):
     def post(self, request, *args , **kwargs):
         form = FaceForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse_lazy('home', kwargs={'pk': pk}))
+            obj = form.save()
+            return HttpResponseRedirect(reverse_lazy('facerecognition:face_image_display', kwargs={'pk': obj.id}))
         context = self.get_context_data(form=form)
         return self.render_to_response(context)     
 

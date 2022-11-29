@@ -3,8 +3,8 @@
 <html>
 <body>
     <h1>Name - {{face.name}}</h1>
-    <img src="{{face.face_image.url}}" alt="Smiley face" width="250" height="250">
+    <img src="{{face.image.url}}" alt="Smiley face" width="250" height="250">
     <br />
-    <a href="{% url 'home' %}">Go Back!!!</a>
+    <a href="{% url 'facerecognition:home' %}">Go Back!!!</a>
 </body>
 </html>

@@ -7,7 +7,7 @@ class Face(models.Model):
     #이미지를 저장 
     #mysite 안에 media폴더 생성 
     #media 폴더 안에 images 폴더 생성
-    image = models.ImageField(upload_to = "images/", null=True, blank=True)
+    image = models.ImageField(upload_to = "images/")
 
     def __str__(self):
         return self.name
