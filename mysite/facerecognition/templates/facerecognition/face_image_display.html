@@ -1,12 +1,26 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-    
+<head>
+    <title>얼굴 인식 앱 프로젝트</title> 
+    <style>
+        nav {background-color:black; font-size:500%; text-align: center}
+        nav a {color:white}
+        h1 {text-align: center;}
+        p {text-align: center;}
+    </style>
+</head>
 <body>
-    <h1>Name - {{face.name}}</h1>
+    <nav>
+        <a>얼굴 인식 앱 프로젝트</a>
 
-    <img src="{{face.image.url}}" alt="Smiley face" width="250" height="250">
+    </nav>
+    <h1>이름 - {{face.name}}</h1>
+
+    <p style="text-align:center;"><img src="{{face.image.url}}" alt="사진을 읽을 수 없습니다." width="250" height="250"></p>
     <br />
-    <a href="{% url 'facerecognition:home' %}">Go Back!!!</a>
+    <p>
+        <a href="{% url 'facerecognition:home' %}">뒤로</a>
+    </p>
 </body>
 </html>
