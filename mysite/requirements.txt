@@ -1,0 +1,4 @@
+Django
+whitenoise
+opencv-python
+Pillow
