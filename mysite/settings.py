@@ -128,4 +128,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-CSRF_TRUSTED_ORIGINS = ['https://app-facerecognition.azurewebsites.net','http://app-facerecognition.azurewebsites.net']

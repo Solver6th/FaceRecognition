@@ -6,7 +6,7 @@ from django.views.generic import TemplateView
 from django.views.generic import DetailView
 from .forms import FaceForm
 from .models import Face
-from django.views.decorators.csrf import csrf_exempt
+
 def index(request):
     return render(request, 'facerecognition/index.html')
 
@@ -25,9 +25,7 @@ class FaceImage(TemplateView):
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
 
-
 class FaceImageDisplay(DetailView):
-
     model = Face
     template_name = 'facerecognition/face_image_display.html'
     context_object_name = 'face'
