@@ -1,4 +1,4 @@
 Django
 whitenoise
-opencv-python
 Pillow
+opencv-python-headless
